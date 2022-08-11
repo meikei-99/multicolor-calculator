@@ -1,3 +1,5 @@
+/*Calculator Start*/
+
 let inputBoxJ=document.getElementById("inputBox")
 
 function calculate(number){
@@ -32,6 +34,31 @@ inputBoxJ.addEventListener("keypress",function(){
         result()
     }
 })
+
+/*Calculator End*/
+/*------------------------------------------------------------------------------------*/
+/*Color Start*/
+let colorBtn=document.getElementsByClassName("color-btn")
+let colorJ=document.getElementsByClassName("color")
+let featureJ=document.getElementById("feature")
+let choiceBtn=document.querySelectorAll(".choice-btn")
+let root=document.querySelector(":root")
+
+colorBtn[0].addEventListener("click",function(){
+    featureJ.classList.toggle("active")
+    colorJ[0].classList.toggle("active")
+})
+
+choiceBtn.forEach(changecolor)
+
+function changecolor(color){
+    color.addEventListener("click",function(){
+        let dataColor=color.getAttribute("data-color")
+        root.style.setProperty("--main-color",dataColor)
+    })
+}
+
+
 
 
 

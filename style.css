@@ -5,8 +5,24 @@
     font-family: 'Rubik', sans-serif;
 }
 
+:root{
+    --main-color:beige;
+    --white-btn:#fefdfa;
+    --white-bgd:white;
+}
+
 body{
     font-size:1.2rem;
+    background-color:   var(--white-bgd);
+}
+
+p{
+    font-size:1.8rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    /* background-color: yellow; */
+    margin-left:1rem;
+    margin-right:0.5rem;
 }
 
 .cal{
@@ -19,12 +35,12 @@ body{
 }
 
 .cal-container{
-    background-color: #ffffff;
+    background-color:var(--main-color);
     box-shadow:  3px 3px 10px rgba(0,0,0,0.2);
     border-radius: 50px;
-    height:1000px;
-    width:800px;
-    padding:50px;
+    height:60rem;
+    width:42rem;
+    padding:3rem;
     display:grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 20%  16%  16%  16%  16%  16% ;
@@ -33,6 +49,23 @@ body{
 .cal-container #inputBox{
     grid-column-start:1;
     grid-column-end: 5;
+    /* background-color: pink; */
+    border-radius: 50px;
+    height:8rem;
+    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.2);
+    border:none;
+    font-size:3rem;
+    display: flex;
+    padding:10px 30px;
+    color:gray;
+    margin-top:10px;
+}
+
+.cal-container input:focus{
+    background-color: var(--white-btn);
+    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.4);
+    border:none;
+    outline-style: none;
 }
 
 .cal-container .equal{
@@ -43,8 +76,8 @@ body{
 button{
     font-size:2.5rem;
     border-radius: 200px;
-    margin:15px;
-    background-color: #fefdfa;
+    margin:1rem;
+    background-color: var(--white-btn);
     border:none;
     box-shadow:2px 2px 8px rgba(0,0,0,0.2);
     cursor:pointer
@@ -56,19 +89,113 @@ button:hover{
     box-shadow:2px 2px 8px rgba(0,0,0,0.35);
 }
 
-input{
-    border-radius: 50px;
-    height:150px;
-    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.2);
-    border:none;
-    font-size:3rem;
+#feature{
+    background-color: orange;
+    height:100vh;
+    width:5rem;
+    position:fixed;
+    top:0rem;right:0;
     display: flex;
-    padding:10px 30px;
-    color:gray
+    justify-content: center;
+    align-items: center;
 }
 
-input:focus{
-    background-color: #fcfcfc;
-    border:none;
-    outline-style: none;
+/* @keyframes slideIn{
+    0%{
+        transform:translateX(20rem)
+    }
+    100%{
+        transform:translateX(0rem)
+    }
+} */
+
+#feature .feature-container{
+    background-color: yellow;
+    height:70rem;
+    width:100%;
 }
+
+.color{
+    background-color:pink;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    height:10rem;
+}
+
+.color .color-btn{
+    background-color:red;
+    height:50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5rem;
+    padding-left:0.7rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+
+/*active*/
+
+#feature.active{
+    width:25rem;
+    animation:slideIn 0.3s ease-in;
+}
+
+@keyframes slideIn{
+    0%{
+        transform:translateX(20rem)
+    }
+    100%{
+        transform:translateX(0rem)
+    }
+}
+
+.color.active{
+    position: relative;
+}
+
+.color.active .color-btn{
+    padding-left:0.5rem;
+}
+
+.color.active .color-btn p{
+    background-color: red;
+    padding-right:2.5rem;
+}
+
+.color.active .color-btn img{
+    animation:rotate 3s infinite linear;
+    cursor:pointer;
+}
+
+.color.active .color-choice{
+    background-color: aqua;
+    height: 50%;
+    position: absolute;
+    top:50%;left:23%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.color.active .color-choice .choice-btn{
+    height:3.5rem;width:3.5rem;
+    display: block;
+    margin:0.5rem 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+
+
+  
+/*active*/
