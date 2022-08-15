@@ -6,7 +6,7 @@
 }
 
 :root{
-    --main-color:beige;
+    --main-color:white;
     --white-btn:#fefdfa;
     --white-bgd:white;
 }
@@ -61,6 +61,7 @@ p{
     margin-top:10px;
 }
 
+
 .cal-container input:focus{
     background-color: var(--white-btn);
     box-shadow: inset 3px 3px 10px rgba(0,0,0,0.4);
@@ -90,7 +91,7 @@ button:hover{
 }
 
 #feature{
-    background-color: orange;
+    /* background-color: orange; */
     height:100vh;
     width:5rem;
     position:fixed;
@@ -100,23 +101,15 @@ button:hover{
     align-items: center;
 }
 
-/* @keyframes slideIn{
-    0%{
-        transform:translateX(20rem)
-    }
-    100%{
-        transform:translateX(0rem)
-    }
-} */
 
 #feature .feature-container{
-    background-color: yellow;
+    /* background-color: yellow; */
     height:70rem;
     width:100%;
 }
 
 .color{
-    background-color:pink;
+    /* background-color:var(--main-color); */
     width:100%;
     display: flex;
     flex-direction: column;
@@ -124,7 +117,7 @@ button:hover{
 }
 
 .color .color-btn{
-    background-color:red;
+    background-color:var(--main-color);
     height:50%;
     display: flex;
     justify-content: space-between;
@@ -145,6 +138,7 @@ button:hover{
     animation:slideIn 0.3s ease-in;
 }
 
+
 @keyframes slideIn{
     0%{
         transform:translateX(20rem)
@@ -154,17 +148,18 @@ button:hover{
     }
 }
 
-.color.active{
-    position: relative;
-}
-
 .color.active .color-btn{
     padding-left:0.5rem;
 }
 
 .color.active .color-btn p{
-    background-color: red;
+    /* background-color: red; */
     padding-right:2.5rem;
+}
+
+.color .color-btn img{
+    animation:rotate 3s infinite linear;
+    cursor:pointer;
 }
 
 .color.active .color-btn img{
@@ -173,29 +168,33 @@ button:hover{
 }
 
 .color.active .color-choice{
-    background-color: aqua;
-    height: 50%;
-    position: absolute;
-    top:50%;left:23%;
+    background-color: var(--main-color);
+    height: 60%;
+    width:70%;
+    border-radius: 2rem;;
+    /* position: absolute;
+    top:50%;left:23%; */
     display:flex;
     justify-content: space-between;
     align-items: center;
+    margin-right:0.5rem;
 }
 
 .color.active .color-choice .choice-btn{
     height:3.5rem;width:3.5rem;
+    border:2px black solid;
     display: block;
     margin:0.5rem 0.5rem;
     border-radius: 50%;
     cursor: pointer;
 }
 
-
 @keyframes rotate{
     100%{
         transform: rotate(360deg);
     }
-
-
   
 /*active*/
+
+/*dark mode*/
+/*dark mode*/

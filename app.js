@@ -38,13 +38,13 @@ inputBoxJ.addEventListener("keypress",function(){
 /*Calculator End*/
 /*------------------------------------------------------------------------------------*/
 /*Color Start*/
-let colorBtn=document.getElementsByClassName("color-btn")
+let palatteBtn=document.getElementsByClassName("palatte-btn")
 let colorJ=document.getElementsByClassName("color")
 let featureJ=document.getElementById("feature")
 let choiceBtn=document.querySelectorAll(".choice-btn")
 let root=document.querySelector(":root")
 
-colorBtn[0].addEventListener("click",function(){
+palatteBtn[0].addEventListener("click",function(){
     featureJ.classList.toggle("active")
     colorJ[0].classList.toggle("active")
 })
@@ -55,6 +55,7 @@ function changecolor(color){
     color.addEventListener("click",function(){
         let dataColor=color.getAttribute("data-color")
         root.style.setProperty("--main-color",dataColor)
+       
     })
 }
 
