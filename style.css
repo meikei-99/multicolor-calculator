@@ -9,20 +9,13 @@
     --main-color:white;
     --white-btn:#fefdfa;
     --white-bgd:white;
+    --dark-mode:#121212;
 }
 
 body{
     font-size:1.2rem;
     background-color:   var(--white-bgd);
-}
-
-p{
-    font-size:1.8rem;
-    text-transform: uppercase;
-    text-decoration: underline;
-    /* background-color: yellow; */
-    margin-left:1rem;
-    margin-right:0.5rem;
+    min-width: 750px;
 }
 
 .cal{
@@ -81,7 +74,7 @@ button{
     background-color: var(--white-btn);
     border:none;
     box-shadow:2px 2px 8px rgba(0,0,0,0.2);
-    cursor:pointer
+    cursor:pointer;
 }
 
 button:hover{
@@ -90,35 +83,24 @@ button:hover{
     box-shadow:2px 2px 8px rgba(0,0,0,0.35);
 }
 
-#feature{
-    /* background-color: orange; */
-    height:100vh;
+.color{
+    /* background-color:var(--main-color); */
     width:5rem;
+    display: flex;
+    flex-direction: column;
+    height:10rem;
     position:fixed;
     top:0rem;right:0;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-#feature .feature-container{
-    /* background-color: yellow; */
-    height:70rem;
-    width:100%;
-}
-
-.color{
-    /* background-color:var(--main-color); */
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    height:10rem;
-}
 
 .color .color-btn{
     background-color:var(--main-color);
     height:50%;
+    width:5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -130,14 +112,40 @@ button:hover{
     cursor: pointer;
 }
 
-
-/*active*/
-
-#feature.active{
-    width:25rem;
-    animation:slideIn 0.3s ease-in;
+.mode{
+    /* background-color:var(--main-color); */
+    width:5rem;
+    display: flex;
+    flex-direction: column;
+    height:10rem;
+    position:fixed;
+    top:8rem;right:0;
+    justify-content: center;
+    align-items: center;
 }
 
+.mode .mode-btn{
+    background-color:var(--main-color);
+    height:5rem;
+    width:5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5rem;
+    padding-left:0.45rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.mode .mode-btn img{
+    background-color: transparent;
+    box-shadow: none;
+    height:4.5rem;
+}
+
+/*active*/
 
 @keyframes slideIn{
     0%{
@@ -148,23 +156,57 @@ button:hover{
     }
 }
 
-.color.active .color-btn{
-    padding-left:0.5rem;
+.color.active{
+    width:25rem;
 }
 
-.color.active .color-btn p{
-    /* background-color: red; */
-    padding-right:2.5rem;
+.mode.active{
+    width:25rem;
+}
+
+.color.active .color-btn{
+    padding-left:0.5rem;
+    width:25rem;
+    animation:slideIn 0.3s ease-in;
+}
+
+.mode.active .mode-btn{
+    animation:slideIn 0.3s ease-in;
+    width:25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mode.active .mode-btn .mode-choice{
+    font-size: 1.5rem;
+    width:25rem;
+    height:3rem;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 .color .color-btn img{
-    animation:rotate 3s infinite linear;
+    cursor:pointer;
+}
+
+.mode .mode-btn img{
     cursor:pointer;
 }
 
 .color.active .color-btn img{
     animation:rotate 3s infinite linear;
     cursor:pointer;
+}
+
+.mode.active .mode-btn img{
+    animation:rotate 3s infinite linear;
+    cursor:pointer;
+    background-color:transparent;
+    box-shadow: none;
+    width:5rem;
+    height:4.5rem;
 }
 
 .color.active .color-choice{
@@ -189,12 +231,81 @@ button:hover{
     cursor: pointer;
 }
 
+.mode-choice .dark-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    background-color: var(--main-color);
+    border-radius: 2rem;
+}
+
+.mode-choice .bright-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    background-color: var(--main-color);
+    border-radius: 2rem;
+}
+
+/*dark mode*/
+body.active{
+    background-color: var(--dark-mode);
+}
+
+.cal-container.active{
+    background-color:var(--dark-mode);
+    box-shadow:  3px 3px 10px rgba(255,255,255,0.1),-3px -3px 10px rgba(255,255,255,0.1);
+}
+
+button.active{
+    background:linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-shadow:2px 2px 8px rgba(255,255,255,0.2);
+  }
+
+
+ button.active:hover{
+    box-shadow:2px 2px 8px rgba(255,255,255,0.35);
+} 
+
+.mode-choice .dark-mode:hover{
+    background-color: white;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.4);
+}
+
+.mode-choice .bright-mode:hover{
+    background-color: white;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.4);
+}
+
+button[data-theme="green"]{
+    background: linear-gradient(0deg, rgba(123,184,159,1) 0%, rgba(45,253,202,1) 86%);
+}
+
+button[data-theme="blue"]{
+    background: linear-gradient(90deg, rgba(83,90,126,1) 0%, rgba(149,179,249,1) 100%);
+}
+
+button[data-theme="yellow"]{
+    background: linear-gradient(90deg, rgba(254,241,142,1) 0%, rgba(245,223,59,1) 100%);
+}
+
+button[data-theme="white"]{
+    background: white;
+}
+
+
+
+/*dark mode*/
+
+
+
 @keyframes rotate{
     100%{
         transform: rotate(360deg);
     }
-  
-/*active*/
 
-/*dark mode*/
-/*dark mode*/
+  
