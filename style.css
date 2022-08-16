@@ -5,8 +5,17 @@
     font-family: 'Rubik', sans-serif;
 }
 
+:root{
+    --main-color:white;
+    --white-btn:#fefdfa;
+    --white-bgd:white;
+    --dark-mode:#121212;
+}
+
 body{
     font-size:1.2rem;
+    background-color:   var(--white-bgd);
+    min-width: 750px;
 }
 
 .cal{
@@ -19,12 +28,12 @@ body{
 }
 
 .cal-container{
-    background-color: #ffffff;
+    background-color:var(--main-color);
     box-shadow:  3px 3px 10px rgba(0,0,0,0.2);
     border-radius: 50px;
-    height:1000px;
-    width:800px;
-    padding:50px;
+    height:60rem;
+    width:42rem;
+    padding:3rem;
     display:grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 20%  16%  16%  16%  16%  16% ;
@@ -33,6 +42,24 @@ body{
 .cal-container #inputBox{
     grid-column-start:1;
     grid-column-end: 5;
+    /* background-color: pink; */
+    border-radius: 50px;
+    height:8rem;
+    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.2);
+    border:none;
+    font-size:3rem;
+    display: flex;
+    padding:10px 30px;
+    color:gray;
+    margin-top:10px;
+}
+
+
+.cal-container input:focus{
+    background-color: var(--white-btn);
+    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.4);
+    border:none;
+    outline-style: none;
 }
 
 .cal-container .equal{
@@ -43,11 +70,11 @@ body{
 button{
     font-size:2.5rem;
     border-radius: 200px;
-    margin:15px;
-    background-color: #fefdfa;
+    margin:1rem;
+    background-color: var(--white-btn);
     border:none;
     box-shadow:2px 2px 8px rgba(0,0,0,0.2);
-    cursor:pointer
+    cursor:pointer;
 }
 
 button:hover{
@@ -56,19 +83,229 @@ button:hover{
     box-shadow:2px 2px 8px rgba(0,0,0,0.35);
 }
 
-input{
-    border-radius: 50px;
-    height:150px;
-    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.2);
-    border:none;
-    font-size:3rem;
+.color{
+    /* background-color:var(--main-color); */
+    width:5rem;
     display: flex;
-    padding:10px 30px;
-    color:gray
+    flex-direction: column;
+    height:10rem;
+    position:fixed;
+    top:0rem;right:0;
+    justify-content: center;
+    align-items: center;
 }
 
-input:focus{
-    background-color: #fcfcfc;
-    border:none;
-    outline-style: none;
+
+
+.color .color-btn{
+    background-color:var(--main-color);
+    height:50%;
+    width:5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5rem;
+    padding-left:0.7rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.4);
+    cursor: pointer;
 }
+
+.mode{
+    /* background-color:var(--main-color); */
+    width:5rem;
+    display: flex;
+    flex-direction: column;
+    height:10rem;
+    position:fixed;
+    top:8rem;right:0;
+    justify-content: center;
+    align-items: center;
+}
+
+.mode .mode-btn{
+    background-color:var(--main-color);
+    height:5rem;
+    width:5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5rem;
+    padding-left:0.45rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.mode .mode-btn img{
+    background-color: transparent;
+    box-shadow: none;
+    height:4.5rem;
+}
+
+/*active*/
+
+@keyframes slideIn{
+    0%{
+        transform:translateX(20rem)
+    }
+    100%{
+        transform:translateX(0rem)
+    }
+}
+
+.color.active{
+    width:25rem;
+}
+
+.mode.active{
+    width:25rem;
+}
+
+.color.active .color-btn{
+    padding-left:0.5rem;
+    width:25rem;
+    animation:slideIn 0.3s ease-in;
+}
+
+.mode.active .mode-btn{
+    animation:slideIn 0.3s ease-in;
+    width:25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mode.active .mode-btn .mode-choice{
+    font-size: 1.5rem;
+    width:25rem;
+    height:3rem;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.color .color-btn img{
+    cursor:pointer;
+}
+
+.mode .mode-btn img{
+    cursor:pointer;
+}
+
+.color.active .color-btn img{
+    animation:rotate 3s infinite linear;
+    cursor:pointer;
+}
+
+.mode.active .mode-btn img{
+    animation:rotate 3s infinite linear;
+    cursor:pointer;
+    background-color:transparent;
+    box-shadow: none;
+    width:5rem;
+    height:4.5rem;
+}
+
+.color.active .color-choice{
+    background-color: var(--main-color);
+    height: 60%;
+    width:70%;
+    border-radius: 2rem;;
+    /* position: absolute;
+    top:50%;left:23%; */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right:0.5rem;
+}
+
+.color.active .color-choice .choice-btn{
+    height:3.5rem;width:3.5rem;
+    border:2px black solid;
+    display: block;
+    margin:0.5rem 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mode-choice .dark-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    background-color: var(--main-color);
+    border-radius: 2rem;
+}
+
+.mode-choice .bright-mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    background-color: var(--main-color);
+    border-radius: 2rem;
+}
+
+/*dark mode*/
+body.active{
+    background-color: var(--dark-mode);
+}
+
+.cal-container.active{
+    background-color:var(--dark-mode);
+    box-shadow:  3px 3px 10px rgba(255,255,255,0.1),-3px -3px 10px rgba(255,255,255,0.1);
+}
+
+button.active{
+    background:linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-shadow:2px 2px 8px rgba(255,255,255,0.2);
+  }
+
+
+ button.active:hover{
+    box-shadow:2px 2px 8px rgba(255,255,255,0.35);
+} 
+
+.mode-choice .dark-mode:hover{
+    background-color: white;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.4);
+}
+
+.mode-choice .bright-mode:hover{
+    background-color: white;
+    box-shadow:2px 5px 3px rgba(0,0,0,0.4);
+}
+
+button[data-theme="green"]{
+    background: linear-gradient(0deg, rgba(123,184,159,1) 0%, rgba(45,253,202,1) 86%);
+}
+
+button[data-theme="blue"]{
+    background: linear-gradient(90deg, rgba(83,90,126,1) 0%, rgba(149,179,249,1) 100%);
+}
+
+button[data-theme="yellow"]{
+    background: linear-gradient(90deg, rgba(254,241,142,1) 0%, rgba(245,223,59,1) 100%);
+}
+
+button[data-theme="white"]{
+    background: white;
+}
+
+
+
+/*dark mode*/
+
+
+
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+
+  

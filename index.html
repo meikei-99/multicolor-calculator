@@ -9,30 +9,52 @@
     </head>
 
     <body>
+                <div class="color">
+                    <div class="color-btn">
+                        <img class="palatte-btn" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/64/000000/external-color-graphic-design-xnimrodx-lineal-color-xnimrodx.png"/>
+                        <div class="color-choice">
+                            <span class="choice-btn" data-color="#7BB89F" style="background-color:#7BB89F"></span>
+                            <span class="choice-btn" data-color="#535A7E" style="background:#535A7E"></span>
+                            <span class="choice-btn" data-color="#FEF18E" style="background-color:#FEF18E"></span>
+                            <span class="choice-btn" data-color="white" style="background-color:white"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mode">
+                    <div class="mode-btn">
+                        <img class="eye-btn" src="https://img.icons8.com/external-filled-outline-icons-maxicons/85/000000/external-detective-detective-filled-outline-filled-outline-icons-maxicons-3.png"/>
+                        <div class="mode-choice">
+                            <span class="dark-mode">dark</span>
+                            <span class="bright-mode">bright</span>
+                        </div>
+                    </div>
+                </div>
+
         <section class="cal">
             <div class="cal-container">
                 <input id="inputBox">
-                <button onclick="del()">DEL</button>
-                <button onclick="remove()">C</button>
-                <button onclick="percentage()">%</button>
-                <button onclick="calculate('/')">/</button>
-                <button onclick="calculate(7)">7</button>
-                <button onclick="calculate(8)">8</button>
-                <button onclick="calculate(9)">9</button>
-                <button onclick="calculate('*')">*</button>
-                <button onclick="calculate(4)">4</button>
-                <button onclick="calculate('5')">5</button>
-                <button onclick="calculate('6')">6</button>
-                <button onclick="calculate('-')">-</button>
-                <button onclick="calculate(1)">1</button>
-                <button onclick="calculate(2)">2</button>
-                <button onclick="calculate(3)">3</button>
-                <button onclick="calculate('+')">+</button>
-                <button onclick="calculate('.')">.</button>
-                <button onclick="calculate(0)">0</button>
-                <button class="equal" onclick="result()">=</button>
+                <button data-theme="light" onclick="del()">DEL</button>
+                <button data-theme="light" onclick="remove()">C</button>
+                <button data-theme="light" onclick="percentage()">%</button>
+                <button data-theme="light" onclick="calculate('/')">/</button>
+                <button data-theme="light" onclick="calculate(7)">7</button>
+                <button data-theme="light" onclick="calculate(8)">8</button>
+                <button data-theme="light" onclick="calculate(9)">9</button>
+                <button data-theme="light" onclick="calculate('*')">*</button>
+                <button data-theme="light" onclick="calculate(4)">4</button>
+                <button data-theme="light" onclick="calculate('5')">5</button>
+                <button data-theme="light" onclick="calculate('6')">6</button>
+                <button data-theme="light" onclick="calculate('-')">-</button>
+                <button data-theme="light" onclick="calculate(1)">1</button>
+                <button data-theme="light" onclick="calculate(2)">2</button>
+                <button data-theme="light" onclick="calculate(3)">3</button>
+                <button data-theme="light" onclick="calculate('+')">+</button>
+                <button data-theme="light" onclick="calculate('.')">.</button>
+                <button data-theme="light" onclick="calculate(0)">0</button>
+                <button data-theme="light" class="equal" onclick="result()">=</button>
             </div>
         </section>
         <script src="app.js"></script>
     </body>
-</html>
+</html> 
