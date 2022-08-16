@@ -98,7 +98,8 @@ brightMode[0].addEventListener("click",function(){
     for(let i = 0; i < btnJ.length; i++){
         btnJ[i].style["-webkit-background-clip"]=null
         btnJ[i].style["-webkit-text-fill-color"]=null
-        btnJ[i].style.boxShadow=null        
+        btnJ[i].style.boxShadow=null  
+        btnJ[i].setAttribute("data-theme","light")      
     }
 })
 

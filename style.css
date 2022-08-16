@@ -71,10 +71,13 @@ button{
     font-size:2.5rem;
     border-radius: 200px;
     margin:1rem;
-    background-color: var(--white-btn);
     border:none;
     box-shadow:2px 2px 8px rgba(0,0,0,0.2);
     cursor:pointer;
+}
+
+button[data-theme="light"]{
+    background-color: var(--white-btn);
 }
 
 button:hover{
@@ -146,15 +149,6 @@ button:hover{
 }
 
 /*active*/
-
-@keyframes slideIn{
-    0%{
-        transform:translateX(20rem)
-    }
-    100%{
-        transform:translateX(0rem)
-    }
-}
 
 .color.active{
     width:25rem;
@@ -296,16 +290,36 @@ button[data-theme="yellow"]{
 button[data-theme="white"]{
     background: white;
 }
-
-
-
 /*dark mode*/
 
+@media only screen and (max-width: 800px) {
+    .cal-container{
+        height:45rem;
+        width:35rem;
+    }
 
+    .cal-container #inputBox{
+        height:6rem;
+    }
+
+    button{
+        font-size:1.8rem;
+    }
+}
+
+@keyframes slideIn{
+    0%{
+        transform:translateX(20rem)
+    }
+    100%{
+        transform:translateX(0rem)
+    }
+}
 
 @keyframes rotate{
     100%{
-        transform: rotate(360deg);
-    }
+        transform: rotate(360deg)
+}
 
-  
+
+
